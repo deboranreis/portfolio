@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html data-theme="dracula">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection</title>
+    <link rel="stylesheet" href="../assets/css/dist/build.css">
+    <link rel="stylesheet" href="../assets/css/dist/style.css">
+</head>
+<body>
+
+    <div class="header bg-base-100">
+        <div class="flex-none gap-2">
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src="/public/assets/profile.png" />
+              </div>
+            </div>
+            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a class="justify-between">
+                  <a href="/public/profile.html"> Perfil</a> 
+                </a>
+              </li>
+              <li><a href="/public/maquinas.html">Máquinas THM</a></li>
+              <li><a href="/public/dashboard.html">Dashboards</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="sidenav" id="sidenav">
+
+    </div>
+
+    <div class="content">
+      <div class="hero-content flex-col lg:flex-row">
+        <div>
+          <h1 class="text-4xl font-bold">SQL Injection</h1>
+          <p class="py-6"><a href="0">Ver sala THM
+          </p>
+        </div>
+      </div>
+    
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content"> 
+            <p>hello</p><br>
+            <p class="resposta-easy">R: </p>
+          </div>
+        </div>
+      </div>
+  
+      <section class="link_buttons">
+        <button class="btn btn-outline"><a href="easy-page1.html">Anterior</button>
+        <button class="btn btn-outline"><a href="easy-page2.html">Próxima</button>
+      </section>
+      
+    </div>
+
+
+    <script>
+      // Função para carregar o conteúdo do menu
+      function loadMenu() {
+          fetch('../menu.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('sidenav').innerHTML = data;
+              })
+              // .catch(error => console.error('Erro ao carregar o menu:', error));
+      }
+    
+      // Carregar o menu quando a página for carregada
+      document.addEventListener('DOMContentLoaded', loadMenu);
+    </script>
+    
+        
+</body>
+</html>

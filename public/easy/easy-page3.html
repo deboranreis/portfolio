@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html data-theme="night">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigating Windows</title>
+    <link rel="stylesheet" href="../assets/css/dist/build.css">
+    <link rel="stylesheet" href="../assets/css/dist/style.css">
+</head>
+<body>
+
+    <div class="header bg-base-100">
+        <div class="flex-none gap-2">
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src="/public/assets/profile.png" />
+              </div>
+            </div>
+            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a class="justify-between">
+                  <a href="/public/profile.html"> Perfil</a> 
+                </a>
+              </li>
+              <li><a href="/public/maquinas.html">Máquinas THM</a></li>
+              <li><a href="/public/dashboard.html">Dashboards</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="sidenav" id="sidenav">
+
+    </div>
+
+    <div class="content">
+      <div class="hero-content flex-col lg:flex-row">
+        <div>
+          <h1 class="text-4xl font-bold">Investigating Windows</h1>
+          <p class="py-6"><a href="https://tryhackme.com/room/investigatingwindows">Ver sala THM</p>
+        </div>
+      </div>
+    
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é a versão e o ano da máquina Windows?
+          </div>
+          <div class="collapse-content"> 
+            <p>No PowerShell o comando Get-ComputerInfo lista todas as informações do sistema. Para restringir isso, usaremos o comando abaixo:</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>Get-ComputerInfo -Property “Os*”</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: Windows Server 2016</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual usuário fez login por último?
+          </div>
+          <div class="collapse-content"> 
+            <p>Primeiro, vamos ver quais são os usuários do sistema. Para fazer isso, vamos utilizar o comando abaixo para enumerar os usuários.</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>Get-LocalUser</code></pre>
+            </div><br>
+            <p>Agora que temos nossa lista LocalUser, vamos ver o último login dos usuários.
+            </p><br>
+            <div class="mockup-code"></div>
+              <pre data-prefix="$"><code>net user {username} |findstr “Last”</code></pre><br>
+            <p class="resposta-easy">R: Administrator</p>
+            </div>           
+          </div>
+        </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Quando John fez login no sistema pela última vez?
+          </div>
+          <div class="collapse-content"> 
+            <p>Vamos seguir o mesmo passo da resposta anterior focando no usuário John.</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>net user John |findstr “Last”</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: 03/02/2019 5:48:32 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            A qual IP o sistema se conecta quando é iniciado pela primeira vez?
+          </div>
+          <div class="collapse-content"> 
+            <p>Vamos dar uma olhada no arquivo host para ver se a resposta pode ser encontrada nele. Abra o arquivo com o Notepad, o caminho do arquivo é:
+            </p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>C:\>Windows>System32>drivers>etc</code></pre>
+            </div><br>
+            <p>Dentro deste arquivo, podemos ver que algo está errado. Existem muitos sites apontados para o host local. Parece que algum tipo de envenenamento de DNS está acontecendo. Vamos dar uma olhada no Registro e ver se podemos descobrir onde este programa de inicialização está se conectando também.
+            </p>
+            <p>Abra o Regedit e siga o caminho abaixo:</p><br>
+            <div class="mockup-code"></div>
+              <pre data-prefix="$"><code>HKEY_LOCAL_MACHINE>SOFTWARE>Microsoft>Windows>CurrentVersion>Run</code></pre><br>
+            <p> Chegando no registro, podemos ver dois valores. O UpdateSvc parece suspeito, verificando-o revela o endereço IP ao qual a máquina remota se conecta quando é inicializada.</p><br>
+            <p class="resposta-easy">R: 10.34.2.3</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Quais duas contas tinham privilégios administrativos (além do usuário Administrador)?
+          </div>
+          <div class="collapse-content"> 
+            <p>Para ver quais usuários estão no grupo de adminitradores, podemos usar no PowerShell o comando abaixo:</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>Get-LocalGroupMember -Group "Administrators"</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: Jenny, Convidada</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é o nome da tarefa agendada que é maliciosa?
+          </div>
+          <div class="collapse-content"> 
+            <p>Com o PowerShell vamos ver quais tarefas estão agendadas para serem executadas neste sistema, para isso vamos usar o comando abaixo:</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>Get-ScheduledTask | where {$_.TaskPath -eq “\”}</code></pre>
+            </div><br>
+            <p>Isso só produzirá qualquer coisa com um \ TaskPath, o que reduzirá nossa lista</p><br>
+            <p class="resposta-easy">R: Clean file system</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual arquivo a tarefa estava tentando executar diariamente?
+          </div>
+          <div class="collapse-content"> 
+            <p>Com o comando abaixo vamos igualar todo o comando do Get-ScheduledTask para $task e em seguida ver o que será executado quando o programa é ativado.</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>$task = Get-ScheduledTask | Where TaskName -EQ “Clean file system”</code></pre><br>
+              <pre data-prefix="$"><code>$task.Actions</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: nc.ps1</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Em qual porta esse arquivo escutou localmente?
+          </div>
+          <div class="collapse-content"> 
+            <p>Observando a saída da resposta anterior já conseguimos a resposta para está pergunta.</p><br>
+            <p class="resposta-easy">R: 1348</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Quando Jenny fez login pela última vez?
+          </div>
+          <div class="collapse-content"> 
+            <p>Vamos executar novamente o comando net user para saber a última vez que Jenny fez login.</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>net user Jenny | findstr "Last"</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: Never</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Em que data ocorreu o acordo?
+          </div>
+          <div class="collapse-content"> 
+            <p>Acessando o file explorer podemos observar várias pastas com uma data que se destaca e não pertencem ao sistema.</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>Get-ComputerInfo -Property “Os*”</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: 03/02/2019</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Durante o comprometimento, em que momento o Windows atribuiu pela primeira vez privilégios especiais a um novo logon?
+          </div>
+          <div class="collapse-content"> 
+            <p>Acessando o visualizador de eventos vamos criar uma nova visualização customizada para reduzir a lista de eventos a serem analisados. Das perguntas anteriores, sabemos que o dia é 2 de março de 2019, então podemos colocar esse dia. Da última pergunta, sabemos um horário aproximado de quando o ataque aconteceu, então podemos colocar 4:00:00 PM — 4:30:00PM. Agora temos que escolher o log que queremos examinar. Para fazer isso, vamos para o campo Event Logs:, quando o menu suspenso aparecer e escolhemos: Security . Isso selecionará esse log. Uma vez na parte inferior, você vamos começar a rolar lentamente para cima, enquanto olhamos para a Task Category . Isso indicará o que estamos procurando, que são mudanças de privilégio para um novo logon. Estamos procurando por Security Group Management , uma vez que você encontrar isso, olhe para a Date and Time para a resposta.</p><br>
+            <p class="resposta-easy">R: 03/02/2019 16:04:47</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual ferramenta foi usada para obter senhas do Windows?
+          </div>
+          <div class="collapse-content"> 
+            <p>Um prompt de comando continua aparecendo com C:\TMP\mim.exe, o que nos dá um lugar para procurar uma possível ferramenta que esteja sendo usada. Uma vez dentro do diretório, vamos ver vários arquivos, documentos do word e commandlets do powershell. Se procurarmos pelo Application chamado mim.exe, como continuamos vendo pop-up, abaixo dele há um documento do word chamado mim-out. Isso pode estar relacionado ao aplicativo, então vamos abri-lo e ver.</p><br>
+            <p class="resposta-easy">R: mimkatz</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual era o IP dos servidores de comando e controle externo dos invasores?
+          </div>
+          <div class="collapse-content"> 
+            <p>Voltamos para o arquivo hosts e dentro dele podemos ver que o google.com e www.google.com estão lá. Isso é muito suspeito, pois não deveríamos precisar colocar isso no arquivo host, ele pode ser encontrado pelo PC indo para o servidor DNS. O agente da ameaça pode estar escondendo seu IP do servidor C2 dessa forma. Podemos verificar abrindo o prompt de comando em nossa máquina host e executando ping em Google.com. Se ele corresponder a este arquivo host, então é legítimo, se não, então é suspeito. Não corresponde ao arquivo host, o que significa que é mais provável que seja o IP do servidor C2, digite isso no TryHackMe como resposta.</p><br>
+
+            <p class="resposta-easy">R: 76.32.97.132</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual era o nome da extensão do shell carregado através do site do servidor?
+          </div>
+          <div class="collapse-content"> 
+            <p>Agora vamos verificar outro diretório suspeito, vamos voltar para a janela do File Explorer, e acessar o Local Disk (C:) , abaixo dele deve estar o diretório que estamos procurando, é inetpub. Dentro deste diretório há outro diretório chamado wwwroot. Agora, dentro desse diretório, podemos ver três arquivos, dois dos quais são arquivos .JSP e o outro é um arquivo .GIF. O arquivo .GIF não é super suspeito em um computador, mas o que é um arquivo .JSP? Com ​​uma rápida pesquisa no Google, descobrimos então que é um arquivo Java. O que um arquivo Java está fazendo aqui? Parece que pode ser a extensão de arquivo que estamos procurando.</p><br>
+            <p class="resposta-easy">R: .jsp</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual foi a última porta que o invasor abriu?
+          </div>
+          <div class="collapse-content"> 
+            <p>Uma boa maneira de descobrir portas abertas é verificar os logs do firewall. Vamos clicar em Inbound Rules no lado esquerdo, isso mostrará muitas regras de entrada. Vamos filtrar a maioria delas para encontrar o que estamos procurando. Na coluna do lado direito vamos clicar em Filter by Group, depois role até o final do menu suspenso, clique em Rules without a Group. Agora temos apenas dois resultados, um deles parece muito suspeito. Clique duas vezes na primeira entrada, Permitir conexões externas para desenvolvimento. Uma janela aparecerá fornecendo detalhes sobre esta regra. Procure a aba Protocolos e Portas e clique nela. Agora aqui você verá a porta que está aberta, esta é a resposta para a pergunta.</p><br>
+            <p class="resposta-easy">R: 1337</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Verifique se há envenenamento de DNS. Qual site foi o alvo?
+          </div>
+          <div class="collapse-content"> 
+            <p>Voltando para o arquivo host que deixamos aberto, ele possui um certo site que poderia ser facilmente encontrado no servidor dns. Esse mesmo site esta vinculado ao servidor C2.</p><br>
+            <p class="resposta-easy">R: google.com</p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+  
+      <section class="link_buttons">
+        <button class="btn btn-outline"><a href="easy-page2.html">Anterior</button>
+        <button class="btn btn-outline"><a href="easy-page2.html">Próxima</button>
+      </section>
+      
+    </div>
+
+
+    <script>
+      // Função para carregar o conteúdo do menu
+      function loadMenu() {
+          fetch('../menu.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('sidenav').innerHTML = data;
+              })
+              // .catch(error => console.error('Erro ao carregar o menu:', error));
+      }
+    
+      // Carregar o menu quando a página for carregada
+      document.addEventListener('DOMContentLoaded', loadMenu);
+    </script>
+    
+        
+</body>
+</html>

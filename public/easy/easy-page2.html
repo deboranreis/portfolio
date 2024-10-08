@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html data-theme="dracula">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introductory Networking</title>
+    <link rel="stylesheet" href="../assets/css/dist/build.css">
+    <link rel="stylesheet" href="../assets/css/dist/style.css">
+</head>
+<body>
+
+    <div class="header bg-base-100">
+        <div class="flex-none gap-2">
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src="/public/assets/profile.png" />
+              </div>
+            </div>
+            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a class="justify-between">
+                  <a href="/public/profile.html"> Perfil</a> 
+                </a>
+              </li>
+              <li><a href="/public/maquinas.html">Máquinas THM</a></li>
+              <li><a href="/public/dashboard.html">Dashboards</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="sidenav" id="sidenav">
+
+    </div>
+
+    <div class="content">
+      <div class="hero-content flex-col lg:flex-row">
+        <div>
+          <h1 class="text-4xl font-bold">Introductory Networking</h1>
+          <p class="py-6"><a href="https://tryhackme.com/r/room/introtonetworking">Ver sala THM</p>
+        </div>
+      </div>
+    
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada escolheria enviar dados por TCP ou UDP?
+          </div>
+          <div class="collapse-content"> 
+            <p></p><br>
+            <p class="resposta-easy">R: 4</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada verifica as informações recebidas para ter certeza de que não foram corrompidas?
+          </div>
+          <div class="collapse-content"> 
+            <p>Camada 2 - Enlace de Dados: A camada de enlace de dados também desempenha uma função importante ao receber dados, pois verifica as informações recebidas para ter certeza de que não foram corrompidas durante a transmissão, o que pode acontecer quando os dados são transmitidos pela camada 1: a camada física.</p><br>
+            <p class="resposta-easy">R: 2</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Em qual camada os dados seriam formatados em preparação para transmissão?
+          </div>
+          <div class="collapse-content"> 
+            <p>Camada 2 - Enlace de Dados: A camada de enlace de dados concentra-se no endereçamento físico da transmissão.</p><br>
+            <p class="resposta-easy">R: 2</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada transmite e recebe dados?
+          </div>
+          <div class="collapse-content"> 
+            <p>Camada 1 - Física: A camada física vai até o hardware do computador. É aqui que os pulsos elétricos que compõem a transferência de dados em uma rede são enviados e recebidos. É função da camada física converter os dados binários da transmissão em sinais e transmiti-los pela rede, bem como receber os sinais recebidos e convertê-los novamente em dados binários.</p><br>
+            <p class="resposta-easy">R: 1</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada criptografa, compacta ou transforma os dados iniciais para fornecer um formato padronizado?
+          </div>
+          <div class="collapse-content"> 
+            <p>Camada 6 - Apresentação: A camada de apresentação traduz os dados em um formato padronizado, bem como lida com qualquer criptografia, compactação ou outras transformações nos dados. Feito isso, os dados são transmitidos para a camada de sessão.</p><br>
+            <p class="resposta-easy">R: 6</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada rastreia as comunicações entre os computadores host e receptor?
+          </div>
+          <div class="collapse-content"> 
+            <p>Camada 5 - Sessão: Quando a camada de sessão recebe os dados formatados corretamente da camada de apresentação, ela verifica se consegue estabelecer uma conexão com o outro computador na rede. Se não puder, ele retornará um erro e o processo não prosseguirá.</p><br>
+            <p class="resposta-easy">R: 5</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada aceita solicitações de comunicação de aplicativos?
+          </div>
+          <div class="collapse-content"> 
+            <p>Camada 7 - Aplicação: Funciona quase exclusivamente com aplicativos, fornecendo uma interface para eles utilizarem na transmissão de dados. Quando os dados são fornecidos à camada de aplicação, eles são transmitidos à camada de apresentação.</p><br>
+            <p class="resposta-easy">R: 7</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada lida com o endereçamento lógico?
+          </div>
+          <div class="collapse-content"> 
+            <p>Camada 3 - Rede: A camada de rede é responsável por localizar o destino da sua solicitação. Por exemplo, a Internet é uma rede enorme; quando você deseja solicitar informações de uma página da web, é a camada de rede que pega o endereço IP da página e descobre o melhor caminho a seguir. Nesta fase estamos trabalhando com o que é chamado de endereçamento lógico (ou seja, endereços IP), que ainda são controlados por software.</p><br>
+            <p class="resposta-easy">R: 3</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Ao enviar dados por TCP, como você chamaria os pedaços de dados "pequenos"?
+          </div>
+          <div class="collapse-content"> 
+            <p>Com um protocolo selecionado, a camada de transporte divide a transmissão em pedaços pequenos (no TCP eles são chamados de segmentos , no UDP eles são chamados de datagramas ), o que facilita a transmissão da mensagem com sucesso.</p><br>
+            <p class="resposta-easy">R: Segments</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Com um protocolo selecionado, a camada de transporte divide a transmissão em pedaços pequenos (no TCP eles são chamados de segmentos , no UDP eles são chamados de datagramas ), o que facilita a transmissão da mensagem com sucesso.
+          </div>
+          <div class="collapse-content"> 
+            <p>O FTP (File Transfer Protocol) é um protocolo da camada de aplicação do TCP/IP que utiliza duas conexões TCP paralelas para transferir um arquivo: uma de controle e outra de dados. O FTP faz parte da camada de aplicação e usa o TCP para fazer as transferências de arquivos.</p><br>
+            <p class="resposta-easy">R: 7</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual protocolo da camada de transporte seria mais adequado para transmitir um vídeo ao vivo?
+          </div>
+          <div class="collapse-content"> 
+            <p>O UDP é usado em situações em que a velocidade é mais importante (por exemplo, streaming de vídeo).</p><br>
+            <p class="resposta-easy">R: UDP</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Como você se referiria aos dados da camada 2 do processo de encapsulamento (com o modelo OSI)?
+          </div>
+          <div class="collapse-content"> 
+            <p>A Camada 2 organiza os dados em quadros(frames), transmitindo-os sequencialmente e processando os quadros de confirmação mandados de volta pelo receptor.</p><br>
+            <p class="resposta-easy">R: Frames</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Como você se referiria aos dados da camada 4 do processo de encapsulamento (com o modelo OSI), se o protocolo UDP fosse selecionado?
+          </div>
+          <div class="collapse-content"> 
+            <p>Na camada de transporte, os dados encapsulados são chamados de segmento ou datagrama (dependendo se TCP ou UDP foi selecionado como protocolo de transmissão).</p><br>
+            <p class="resposta-easy">R: Datagrams</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Que processo um computador executaria em uma mensagem recebida?
+          </div>
+          <div class="collapse-content"> 
+            <p>Quando a mensagem é recebida pelo segundo computador, ele inverte o processo começando na camada física e avançando até chegar à camada de aplicação, eliminando as informações adicionadas à medida que avança. Isto é conhecido como desencapsulação.</p><br>
+            <p class="resposta-easy">R: De-encapsulation</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é a única camada do modelo OSI que adiciona um trailer durante o encapsulamento?
+          </div>
+          <div class="collapse-content"> 
+            <p>A camada de enlace de dados também adiciona uma peça no final da transmissão, que é usada para verificar se os dados não foram corrompidos na transmissão; isso também tem a vantagem adicional de maior segurança, já que os dados não podem ser interceptados e adulterados sem quebrar o trailer.</p><br>
+            <p class="resposta-easy">R: Data Link</p>
+          </div>
+        </div>
+      </div>
+  
+       <div class="perguntas">
+         <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" /> 
+           <div class="collapse-title text-xl font-medium">
+            O encapsulamento fornece uma camada extra de segurança (Sim/Não) ?
+            </div>
+            <div class="collapse-content"> 
+              <p>O encapsulamento em redes de computadores fornece segurança extra ao adicionar camadas de controle e proteção aos dados enquanto eles se movem através da rede. </p><br>
+              <p class="resposta-easy">R: Aye</p>
+            </div>
+          </div>       
+       </div>  
+       
+       <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+             Qual modelo foi introduzido primeiro, OSI ou TCP/IP?
+           </div>
+           <div class="collapse-content"> 
+             <p>O modelo TCP/IP foi introduzido pelo DoD americano em 1982 para fornecer um padrão – algo que todos os diferentes fabricantes deveriam seguir.</p><br>
+             <p class="resposta-easy">R: TCP/IP</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada do modelo TCP/IP cobre a funcionalidade da camada de Transporte do modelo OSI (Nome Completo)?
+           </div>
+           <div class="collapse-content"> 
+             <p>O modelo TCP/IP é, em muitos aspectos, muito semelhante ao modelo OSI. É alguns anos mais antigo e serve de base para redes do mundo real. O modelo TCP /IP consiste em quatro camadas: Aplicação, Transporte, Internet e Interface de Rede. Entre eles, cobrem a mesma gama de funções que as sete camadas do modelo OSI.</p><br>
+             <p class="resposta-easy">R: Transporte</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada do modelo TCP/IP cobre a funcionalidade da camada de Sessão do modelo OSI (Nome Completo)?
+           </div>
+           <div class="collapse-content"> 
+             <p>No modelo TCP/IP, a funcionalidade da camada de Sessão do modelo OSI é coberta principalmente pela Camada de Aplicação. Esta camada no modelo TCP/IP engloba diversas funções que no modelo OSI são distribuídas entre as camadas de Aplicação, Apresentação e Sessão.</p><br>
+             <p class="resposta-easy">R: Application</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            A camada de interface de rede do modelo TCP/IP cobre a funcionalidade de duas camadas no modelo OSI. Essas camadas são Data Link e?.. (Nome Completo)?
+           </div>
+           <div class="collapse-content"> 
+             <p>A camada de interface de rede do modelo TCP/IP cobre a funcionalidade de duas camadas no modelo OSI. Essas camadas são Data Link e?.. (Nome Completo)?</p><br>
+             <p class="resposta-easy">R: Physical</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual camada do modelo TCP/IP lida com a funcionalidade da camada de rede OSI?
+           </div>
+           <div class="collapse-content"> 
+             <p>A Camada de Internet do modelo TCP/IP lida com a funcionalidade da Camada de Rede do modelo OSI. Esta camada é responsável pelo endereçamento lógico e pelo roteamento dos pacotes de dados entre redes diferentes.</p><br>
+             <p class="resposta-easy">R: Internet</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Que tipo de protocolo é TCP?
+           </div>
+           <div class="collapse-content"> 
+             <p>O TCP é um protocolo baseado em conexão. Em outras palavras, antes de enviar qualquer dado via TCP, você deve primeiro formar uma conexão estável entre os dois computadores. O processo de formação dessa conexão é chamado de handshake triplo.</p><br>
+             <p class="resposta-easy">R: Connection-based</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é a abreviação de SYN?
+           </div>
+           <div class="collapse-content"> 
+             <p>SYN (abreviação de sincronizar ), que essencialmente faz o primeiro contato para iniciar o processo de conexão.</p><br>
+             <p class="resposta-easy">R: Synchronise</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é a segunda etapa do handshake de três vias?
+           </div>
+           <div class="collapse-content"> 
+             <p>O servidor responderá então com um pacote contendo o bit SYN, bem como outro bit de "reconhecimento", chamado ACK.</p><br>
+             <p class="resposta-easy">R: Syn/ACK</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é o nome abreviado do segmento "Reconhecimento" no handshake triplo?
+           </div>
+           <div class="collapse-content"> 
+             <p>No contexto do handshake triplo (three-way handshake) usado pelo protocolo TCP (Transmission Control Protocol), o segmento ACK é enviado pelo receptor para confirmar que recebeu o segmento SYN enviado pelo remetente, indicando que a conexão pode prosseguir.</p><br>
+             <p class="resposta-easy">R: ACK</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual comando você usaria para executar ping no site bbc.co.uk?
+           </div>
+           <div class="collapse-content"> 
+             <p>O comando ping é usado quando queremos testar se uma conexão com um recurso remoto é possível. Normalmente será um site na internet, mas também pode ser um computador na sua rede doméstica se você quiser verificar se está configurado corretamente.</p><br>
+             <p class="resposta-easy">R: ping bbc.co.uk</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Ping muirlandoracle.co.uk. Qual é o endereço IPv4?
+           </div>
+           <div class="collapse-content"> 
+              <div class="mockup-code">
+                <pre data-prefix="$"><code>ping muirlandoracle.co.uk</code></pre>
+                <pre data-prefix=">" class="text-success"><code>217.160.0.152</code></pre>
+              </div><br>
+             <p class="resposta-easy">R:  217.160.0.152</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual opção permite alterar o intervalo de solicitações de ping enviadas?
+           </div>
+           <div class="collapse-content"> 
+             <p>-i altera o intervalo para enviar pacotes.</p><br>
+             <p class="resposta-easy">R: -i</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual opção permitiria restringir solicitações ao IPv4?
+           </div>
+           <div class="collapse-content"> 
+             <p>-4 e -6 especifica o protocolo de endereço IP de destino como IPv4 ou IPv6, respectivamente.</p><br>
+             <p class="resposta-easy">R: -4</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual opção forneceria uma saída mais detalhada?
+           </div>
+           <div class="collapse-content"> 
+             <p>-v habilita a saída detalhada.</p><br>
+             <p class="resposta-easy">R: -v</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual opção você usaria para especificar uma interface ao usar o Traceroute?
+           </div>
+           <div class="collapse-content"> 
+             <p>-i Especifica a interface através da qual o traceroute deve enviar pacotes. Por padrão, a interface é selecionada de acordo com a tabela de roteamento.</p><br>
+             <p class="resposta-easy">R: -i</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual opção você usaria se quisesse usar solicitações TCP SYN ao rastrear a rota?
+           </div>
+           <div class="collapse-content"> 
+             <p>-T Use TCP SYN para sondagens.</p><br>
+             <p class="resposta-easy">R: -T</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            -T Use TCP SYN para sondagens.[Pensamento lateral] Em qual camada do modelo TCP/IP o traceroute será executado por padrão (Windows)?
+           </div>
+           <div class="collapse-content"> 
+             <p></p><br>
+             <p class="resposta-easy">R: Internet</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Faça uma pesquisa whois facebook.com. Qual é o código postal do registrante do facebook.com?
+           </div>
+           <div class="collapse-content"> 
+             <p></p><br>
+             <p class="resposta-easy">R: 94025</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Quando o domínio facebook.com foi registrado pela primeira vez (Formato: DD/MM/AAAA)?
+           </div>
+           <div class="collapse-content"> 
+             <p></p><br>
+             <p class="resposta-easy">R: 29/03/1997</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Faça uma pesquisa whois em microsoft.com. Em qual cidade o registrante está baseado?
+           </div>
+           <div class="collapse-content"> 
+             <p><div class="mockup-code">
+              <pre data-prefix="$"><code>npm i daisyui</code></pre>
+              <pre data-prefix=">" class="text-warning"><code>installing...</code></pre>
+              <pre data-prefix=">" class="text-success"><code>Done!</code></pre>
+            </div></p><br>
+             <p class="resposta-easy">R: Redmond</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            [OSINT] Qual é o nome do campo de golfe próximo ao endereço do registrante do microsoft.com?
+           </div>
+           <div class="collapse-content"> 
+             <p></p><br>
+             <p class="resposta-easy">R: Bellevue Golf Course</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é o e-mail técnico registrado em microsoft.com?
+           </div>
+           <div class="collapse-content"> 
+             <p></p><br>
+             <p class="resposta-easy">R: msnhst@microsoft.com</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é a abreviação de DNS?
+           </div>
+           <div class="collapse-content"> 
+             <p>O DNS (Sistema de Nomes de Domínio) é frequentemente comparado a uma lista telefônica. O DNS usa nomes de domínio legíveis por humanos, como www.tryhackme.com, e os mapeia para endereços IP numéricos que podem ser lidos por máquinas.</p><br>
+             <p class="resposta-easy">R: Domain Name System</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é o primeiro tipo de servidor DNS que seu computador consultaria ao pesquisar um domínio?
+           </div>
+           <div class="collapse-content"> 
+             <p>Supondo que o endereço ainda não tenha sido encontrado, seu computador enviará uma solicitação para o que é conhecido como servidor DNS recursivo . Eles serão automaticamente conhecidos pelo roteador da sua rede.</p><br>
+             <p class="resposta-easy">R: Recursive</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Que tipo de servidor DNS contém registros específicos para extensões de domínio (ou seja , .com, .co.uk*, etc)*? Use a versão longa do nome.
+           </div>
+           <div class="collapse-content"> 
+             <p>Os servidores de domínio de nível superior (TLD) são divididos em extensões. Assim, por exemplo, se você estivesse procurando por tryhackme .com , sua solicitação seria redirecionada para um servidor TLD que gerenciava .comdomínios. Se você estivesse procurando bbc .co.uk, sua solicitação seria redirecionada para um servidor TLD que lida com .co.uk domínios.</p><br>
+             <p class="resposta-easy">R: Top-Level Domain</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é o primeiro lugar que seu computador procuraria para encontrar o endereço IP de um domínio?
+           </div>
+           <div class="collapse-content"> 
+             <p>Se nenhum mapeamento tiver sido criado manualmente, o computador verifica o cache DNS local para ver se já possui um endereço IP armazenado para o site; se isso acontecer, ótimo. Caso contrário, passa para a próxima etapa do processo.</p><br>
+             <p class="resposta-easy">R: Local Cache</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            [Pesquisa] O Google administra dois servidores DNS públicos. Um deles pode ser consultado com o IP 8.8.8.8, qual o endereço IP do outro?
+           </div>
+           <div class="collapse-content"> 
+             <p></p><br>
+             <p class="resposta-easy">R: 8.8.4.4</p>
+           </div>
+         </div>       
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+           <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Se uma consulta DNS tiver um TTL de 24 horas, qual número a consulta dig mostraria?
+           </div>
+           <div class="collapse-content"> 
+             <p></p><br>
+             <p class="resposta-easy">R: 86400</p>
+           </div>
+         </div>       
+      </div>
+      
+      <section class="link_buttons">
+        <button class="btn btn-outline"><a href="easy-page1.html">Anterior</button>
+        <button class="btn btn-outline"><a href="easy-page3.html">Próxima</button>
+      </section>
+
+    </div>
+
+
+    <script>
+      // Função para carregar o conteúdo do menu
+      function loadMenu() {
+          fetch('../menu.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('sidenav').innerHTML = data;
+              })
+              // .catch(error => console.error('Erro ao carregar o menu:', error));
+      }
+    
+      // Carregar o menu quando a página for carregada
+      document.addEventListener('DOMContentLoaded', loadMenu);
+    </script>
+    
+        
+</body>
+</html>

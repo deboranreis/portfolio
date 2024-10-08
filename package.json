@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "tw": "npx tailwindcss -i ./public/assets/css/tailwind.css -o ./public/assets/css/dist/build.css --watch",
+    "start": "react-scripts start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  },
+  "dependencies": {
+    "daisyui": "^4.12.2",
+    "react-scripts": "^3.0.1"
+  }
+}

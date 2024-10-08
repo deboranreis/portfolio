@@ -1,0 +1,63 @@
+.sidenav{
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+  
+.content {
+    margin-left: 200px;
+    padding-left: 20px;
+}
+
+.perguntas {
+    padding-top: 0%;
+    padding-right: 4%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+}
+  
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 20px;
+}
+
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.link_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+}
+
+
+.modalmenu{
+    display: flex;
+
+}
+
+.resposta-easy{
+    color: #22c55e;
+}
+
+.resposta-medium{
+    color: #eab308;
+}
+
+.resposta-hard{
+    color: #ef4444;
+}
+
+.resposta-insano{
+    color: #a855f7;
+}
