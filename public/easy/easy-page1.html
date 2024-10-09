@@ -22,9 +22,9 @@
               <li>
                 <a class="justify-between">
                   <a href="../../index.html">Home</a>
-                  <a href="../public/profile.html"> Perfil</a> 
-                  <a href="../public/maquinas.html">Máquinas THM</a>
-                  <a href="../public/dashboard.html">Dashboards</a>
+                  <a href="./public/profile.html"> Perfil</a> 
+                  <a href="./public/maquinas.html">Máquinas THM</a>
+                  <a href="./public/dashboard.html">Dashboards</a>
                 </a>
               </li>
             </ul>
@@ -107,7 +107,7 @@
     <script>
       // Função para carregar o conteúdo do menu
       function loadMenu() {
-          fetch('../public/menu.html')
+          fetch('./menu.html')
               .then(response => response.text())
               .then(data => {
                   document.getElementById('sidenav').innerHTML = data;
