@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/gato.png">
-    <title>Nesso (Nessus)</title>
+    <title>Burpe Suite: Repeater</title>
     <link rel="stylesheet" href="../assets/css/dist/build.css">
     <link rel="stylesheet" href="../assets/css/dist/style.css">
 </head>
@@ -16,7 +16,7 @@
           <div class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
               <div class="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="/public/assets/profile.png" />
+                <img alt="Tailwind CSS Navbar component" src="../assets/profile.png" />
               </div>
             </div>
             <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
@@ -40,9 +40,8 @@
     <div class="content">
       <div class="hero-content flex-col lg:flex-row">
         <div>
-          <h1 class="text-4xl font-bold">Nesso (Nessus)</h1>
-          <p class="py-6"><a href="0">Ver sala THM
-          </p>
+          <h1 class="text-4xl font-bold">Burp Suite: Repeater</h1>
+          <p class="py-6"><a href="https://tryhackme.com/r/room/burpsuiterepeater">Ver sala THM</a></p>
         </div>
       </div>
     
@@ -51,18 +50,96 @@
         <div class="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" /> 
           <div class="collapse-title text-xl font-medium">
-            Click to open this one and close others
+            Quais seções nos dão um controle mais intuitivo sobre nossas solicitações?
           </div>
           <div class="collapse-content"> 
-            <p>hello</p><br>
-            <p class="resposta-easy">R: </p>
+            <p>Posicionado no lado direito, o Inspector nos permite analisar e modificar solicitações de uma maneira mais intuitiva do que usar o editor raw. Exploraremos esse recurso em uma tarefa posterior.</p><br>
+            <p class="resposta-easy">R: Inspector</p>
+          </div>
+        </div>
+      </div>
+
+          <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual visualização será preenchida ao enviar uma solicitação do módulo Proxy para o Repetidor? 
+          </div>
+          <div class="collapse-content"> 
+            <p>Localizada no canto superior esquerdo da aba, ela exibe a lista de solicitações do Repeater. Várias solicitações podem ser gerenciadas simultaneamente, e cada nova solicitação enviada ao Repeater aparecerá aqui.</p><br>
+            <p class="resposta-easy">R: Request</p>
+          </div>
+        </div>
+      </div>
+
+          <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual opção  nos permite visualizar a página como ela apareceria em um navegador da web?
+          </div>
+          <div class="collapse-content"> 
+            <p>A opção render nos permite visualizar a página como ela apareceria em um navegador da web. Embora não seja comumente utilizada no Repeater, já que nosso foco geralmente está no código-fonte, ela ainda oferece um recurso valioso. Para a maioria dos cenários, a opção Pretty geralmente é suficiente. No entanto, é benéfico estar familiarizado com o uso das outras três opções.</p><br>
+            <p class="resposta-easy">R: Render</p>
+          </div>
+        </div>
+      </div>
+
+          <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual seção no Inspetor é específica para solicitações POST?
+          </div>
+          <div class="collapse-content"> 
+            <p>Similar aos parâmetros de consulta, mas específico para solicitações POST. Quaisquer dados enviados como parte de uma solicitação POST serão exibidos nesta seção, permitindo-nos modificar os parâmetros antes de reenviar.</p><br>
+            <p class="resposta-easy">R: Body Parameters</p>
+          </div>
+        </div>
+      </div>
+
+          <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é a bandeira que você recebe?
+          </div>
+          <div class="collapse-content"> 
+            <p>Após capturar uma solicitação da máquina no módulo Proxy e enviar ao repeidor conseguimos ver o código-fonte  da página solicitada na visualização Resposta. Usando o Inspector adicionamos um cabeçalho chamado FlagAuthorised e definimos o valor True.</p><br>
+            <p class="resposta-easy">R: THM{Yzg2MWI2ZDhlYzdlNGFiZTUzZTIzMzVi}</p>
+          </div>
+        </div>
+      </div>
+
+          <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é o sinalizador que você recebe quando causa um erro 500 no endpoint?
+          </div>
+          <div class="collapse-content"> 
+            <p>Ao utilizar o burpe para fazer com que o servidor gere um código "500 Internal Server Erro" alterando o número no final da solicitação de entredas extremas, capturamos o sinalizador.</p><br>
+            <p class="resposta-easy">R: THM{N2MzMzFhMTA1MmZiYjA2YWQ4M2ZmMzhl}</p>
+          </div>
+        </div>
+      </div>
+
+          <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            O que é a bandeira?
+          </div>
+          <div class="collapse-content"> 
+            <p>Através de uma exploração de injeção SQL no site conseguimos capturar a flag.</p><br>
+            <p class="resposta-easy">R: THM{ZGE3OTUyZGMyMzkwNjJmZjg3Mzk1NjJh}</p>
           </div>
         </div>
       </div>
   
       <section class="link_buttons">
-        <button class="btn btn-outline"><a href="easy-page1.html">Anterior</button>
-        <button class="btn btn-outline"><a href="easy-page2.html">Próxima</button>
+        <button class="btn btn-outline"><a href="easy-page4.html">Anterior</button>
+        <button class="btn btn-outline"><a href="easy-page6.html">Próxima</button>
       </section>
       
     </div>
