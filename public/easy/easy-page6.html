@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/gato.png">
-    <title>Mr Robot</title>
+    <title>Blue</title>
     <link rel="stylesheet" href="../assets/css/dist/build.css">
     <link rel="stylesheet" href="../assets/css/dist/style.css">
 </head>
@@ -40,8 +40,8 @@
     <div class="content">
       <div class="hero-content flex-col lg:flex-row">
         <div>
-          <h1 class="text-4xl font-bold">Mr Robot</h1>
-          <p class="py-6"><a href="https://tryhackme.com/r/room/mrrobot">Ver sala THM</a></p>
+          <h1 class="text-4xl font-bold">Blue</h1>
+          <p class="py-6"><a href="https://tryhackme.com/r/room/blue">Ver sala THM</a></p>
         </div>
       </div>
     
@@ -50,22 +50,16 @@
         <div class="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" /> 
           <div class="collapse-title text-xl font-medium">
-            Qual é a chave 1?
+            Quantas portas estão abertas com um número de porta menor que 1000?
           </div>
-          <div class="collapse-content"> 
-            <p class="resposta-easy">R: 073403c8a58a1f80d943455fb30724b9</p>
-          </div>
-        </div>
-      </div>
-
-          <div class="perguntas">
-        <div class="collapse collapse-arrow bg-base-200">
-          <input type="radio" name="my-accordion-2" /> 
-          <div class="collapse-title text-xl font-medium">
-            Qual é a chave 2?
-          </div>
-          <div class="collapse-content"> 
-            <p class="resposta-easy">R: 822c73956184f694993bede3eb39f959</p>
+           <div class="collapse-content"> 
+            <p>Vamos começar realizando uma varredura das portas com o nmap. Para isso, use o comando abaixo:</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>nmap --open <endereço-ip></code></pre>
+            </div><br>
+            <p>--open: Esse parâmetro exibe apenas as portas que estão abertas, filtrando as portas que estão fechadas ou filtradas.</p><br>
+            <p><endereço-ip>: Substitua pelo IP ou hostname do alvo que você deseja escanear.</p><br>
+            <p class="resposta-easy">R: 3</p>
           </div>
         </div>
       </div>
@@ -74,10 +68,159 @@
         <div class="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" /> 
           <div class="collapse-title text-xl font-medium">
-            Qual é a chave 3?
+            A que esta máquina é vulnerável? (Resposta no formato: ms??-???, ex: ms08-067)
           </div>
           <div class="collapse-content"> 
-            <p class="resposta-easy">R: 04787ddef27c3dee1ee161b21670b4e4</p>
+            <p>Para descobrir isso, usaremos um script nmap para descobrir se a máquina está vulnerável:</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>nmap -Ss -Pn -p 445 $ip --script smb-vuln-ms17-010.nse</code></pre>
+            </div><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: ms17-010</p>
+          </div>
+        </div>
+      </div>
+
+          <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Encontre o código de exploração que executaremos contra a máquina. Qual é o caminho completo do código? (Ex: exploit/........)
+          </div>
+               <div class="collapse-content"> 
+            <p>Vamos iniciar o Metasploit executando o comando msfconsole:</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>pesquisar ms17 -010</code></pre>
+            </div><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: exploit/windows/smb/ms17_010_eternalblue</p>
+          </div>
+        </div>
+      </div>
+
+              <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Mostrar opções e definir o valor necessário. Qual é o nome desse valor? (Todas as letras maiúsculas para envio)
+          </div>
+            <div class="collapse-content"> 
+            <p>Usamos o comando options para mostrar todas as opções. Podemos ver que o único campo obrigatório que precisamos preencher é RHOSTS.</p><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: RHOSTS</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Se você ainda não fez isso, coloque o shell obtido anteriormente em segundo plano (CTRL + Z). Pesquise online como converter um shell para o shell meterpreter no metasploit. Qual é o nome do módulo post que usaremos? (Caminho exato, similar ao exploit que selecionamos anteriormente)
+          </div>
+            <div class="collapse-content"> 
+            <p>Agora enviamos nossa sessão para segundo plano e convertemos nosso shell para meterpreter. Para fazer isso, primeiro procuramos por shell_to_meterpreter:</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>pesquisar shell_to_meterpreter</code></pre>
+            </div><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: post/multi/manage/shell_to_meterpreter</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Selecione isto (use MODULE_PATH). Mostrar opções, qual opção precisamos alterar?
+          </div>
+            <div class="collapse-content"> 
+            <p>Com o comando options podemos ver que precisamos definir a SESSÃO</p><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: SESSION</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Dentro do nosso shell meterpreter elevado, execute o comando 'hashdump'. Isso despejará todas as senhas na máquina, desde que tenhamos os privilégios corretos para isso. Qual é o nome do usuário não padrão? 
+          </div>
+            <div class="collapse-content"> 
+            <p>Agora que temos nosso shell elevado, execute hashdump</p><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: Jon</p>
+          </div>
+        </div>
+      </div>
+
+            <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Copie esse hash de senha para um arquivo e pesquise como quebrá-lo. Qual é a senha quebrada?
+          </div>
+            <div class="collapse-content"> 
+            <p>Copie o hash (ffb43f0de35be4d9917ac0cc8ad57f8d) para um arquivo executando</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>eco 'ffb43f0de35be4d9917ac0cc8ad57f8d' > hash.txt</code></pre>
+            </div><br>
+            <div class="collapse-content"> 
+            <p>Vamos usar John the Ripper para quebrá-lo. Primeiro pensei que o formato seria LM, mas na verdade é nt.</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt hash.txt</code></pre>
+            </div><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: alqfna22</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+           Flag1? Este sinalizador pode ser encontrado na raiz do sistema. 
+          </div>
+            <div class="collapse-content"> 
+            <p>Certifique-se de que você ainda está na sessão meterpreter. Verifique seu diretório de trabalho atual digitando pwd , seguido de mover para cima (..) duas vezes. Liste os arquivos no diretório atual ( ls ou dir ) e finalmente leia o sinalizador executando cat flag1.txt .</p><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: flag{access_the_machine}</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Flag2? Este sinalizador pode ser encontrado no local onde as senhas são armazenadas no Windows.
+          </div>
+            <div class="collapse-content"> 
+            <p>As senhas do Windows são armazenadas em hash dentro de arquivos no diretório c:\Windows\System32\Config. Mude seu diretório para lá no shell meterpreter:</p><br>
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>cd C:/Windows/System32/config</code></pre><br>
+            <p>Liste os arquivos que estão lá, leia o flag2.txt:</p>
+            </div><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: flag{sam_database_elevated_access}</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            flag3? Esta bandeira pode ser encontrada em um local excelente para saquear. Afinal, os administradores geralmente têm coisas bem interessantes salvas. 
+          </div>
+             <div class="collapse-content"> 
+            <p>Se listarmos todos os arquivos no diretório Jon, não vemos nenhuma flag. Vamos para a pasta Documents. </p><br>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: flag{admin_documents_can_be_valuable}</p>
           </div>
         </div>
       </div>
