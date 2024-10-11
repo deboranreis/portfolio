@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/gato.png">
-    <title>OWASP Juice Shop</title>
+    <title>Basic Pentesting</title>
     <link rel="stylesheet" href="../assets/css/dist/build.css">
     <link rel="stylesheet" href="../assets/css/dist/style.css">
 </head>
@@ -16,16 +16,16 @@
           <div class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
               <div class="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="/public/assets/profile.png" />
+                <img alt="Tailwind CSS Navbar component" src="../assets/profile.png" />
               </div>
             </div>
             <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
               <li>
                 <a class="justify-between">
-                  <a href="/index.html">Home</a>
-                  <a href="/public/profile.html"> Perfil</a> 
-                  <a href="/public/maquinas.html">Máquinas THM</a>
-                  <a href="/public/dashboard.html">Dashboards</a>
+                  <a href="../../index.html">Home</a>
+                  <a href="../profile.html"> Perfil</a> 
+                  <a href="../maquinas.html">Máquinas THM</a>
+                  <a href="../dashboard.html">Dashboards</a>
                 </a>
               </li>
             </ul>
@@ -40,9 +40,8 @@
     <div class="content">
       <div class="hero-content flex-col lg:flex-row">
         <div>
-          <h1 class="text-4xl font-bold">OWASP Juice Shop</h1>
-          <p class="py-6"><a href="0">Ver sala THM
-          </p>
+          <h1 class="text-4xl font-bold">Basic Pentesting</h1>
+          <p class="py-6"><a href="https://tryhackme.com/r/room/basicpentestingjt">Ver sala THM</a></p>
         </div>
       </div>
     
@@ -51,18 +50,93 @@
         <div class="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" /> 
           <div class="collapse-title text-xl font-medium">
-            Click to open this one and close others
+            Qual é o nome do diretório oculto no servidor web (digite o nome sem /)?
           </div>
           <div class="collapse-content"> 
-            <p>hello</p><br>
-            <p class="resposta-easy">R: </p>
+            <p>Utilizando o dirbuster, coloque o número de Threads no máximo e insira a lista de palavras a ser usada</p><br>
+            <p class="resposta-easy">R: development</p>
           </div>
         </div>
       </div>
-  
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é o nome de usuário?
+          </div>
+          <div class="collapse-content"> 
+            <p>Se lermos as duas mensagens, veremos algo sobre smb e senhas fracas a. Então, podemos forçar o SMB, para isso vamos usar o comando abaixo:</p><br>
+            <div class="mockup-code">
+            <pre data-prefix="$"><code>enum4linux ip_da_maquina</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: jan</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é a senha?
+          </div>
+          <div class="collapse-content"> 
+            <p>Agora que temos um nome de usuário, podemos usar o hydra para forçar o serviço SSH com o usuário jan</p><br>
+            <div class="mockup-code">
+            <pre data-prefix="$"><code>hydra -l jan -P /usr/share/wordlists/rockyou.txt 10.10.251.111 ssh</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: armando</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual serviço você usa para acessar o servidor (resposta abreviada e em letras maiúsculas)?
+          </div>
+          <div class="collapse-content"> 
+            <p>Aquele que usamos para força bruta</p><br>
+            <p class="resposta-easy">R: SSH</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é o nome do outro usuário que você encontrou (tudo em letras minúsculas)?
+          </div>
+          <div class="collapse-content"> 
+            <p>Depois de um tempo vemos que para o usuário kay as chaves rsa estão acessíveis. Isso significa que podemos usar essas chaves para fazer login como o usuário kay via ssh</p><br>
+            <p class="resposta-easy">R: kay</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual é a senha final que você obtém?
+          </div>
+          <div class="collapse-content"> 
+            <p>Após realizar brute force no usuário kay teremos acesso ao arquivo pass.bak. PAra obter a senha, precisamos digitar o comando abaixo:</p><br>
+            <div class="mockup-code">
+            <pre data-prefix="$"><code>passe de gato.bak</code></pre>
+            </div><br>
+            <p class="resposta-easy">R: heresareallystrongpasswordthatfollowsthepasswordpolicy</p>
+          </div>
+        </div>
+      </div>
+
+        
       <section class="link_buttons">
-        <button class="btn btn-outline"><a href="easy-page1.html">Anterior</button>
-        <button class="btn btn-outline"><a href="easy-page2.html">Próxima</button>
+        <button class="btn btn-outline"><a href="easy-page7.html">Anterior</button>
+        <button class="btn btn-outline"><a href="easy-page9.html">Próxima</button>
       </section>
       
     </div>
