@@ -75,7 +75,6 @@
             <div class="mockup-code">
               <pre data-prefix="$"><code>nmap -Ss -Pn -p 445 $ip --script smb-vuln-ms17-010.nse</code></pre>
             </div><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: ms17-010</p>
           </div>
         </div>
@@ -92,7 +91,6 @@
             <div class="mockup-code">
               <pre data-prefix="$"><code>pesquisar ms17 -010</code></pre>
             </div><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: exploit/windows/smb/ms17_010_eternalblue</p>
           </div>
         </div>
@@ -106,7 +104,6 @@
           </div>
             <div class="collapse-content"> 
             <p>Usamos o comando options para mostrar todas as opções. Podemos ver que o único campo obrigatório que precisamos preencher é RHOSTS.</p><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: RHOSTS</p>
           </div>
         </div>
@@ -123,7 +120,6 @@
             <div class="mockup-code">
               <pre data-prefix="$"><code>pesquisar shell_to_meterpreter</code></pre>
             </div><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: post/multi/manage/shell_to_meterpreter</p>
           </div>
         </div>
@@ -137,7 +133,6 @@
           </div>
             <div class="collapse-content"> 
             <p>Com o comando options podemos ver que precisamos definir a SESSÃO</p><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: SESSION</p>
           </div>
         </div>
@@ -151,13 +146,12 @@
           </div>
             <div class="collapse-content"> 
             <p>Agora que temos nosso shell elevado, execute hashdump</p><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: Jon</p>
           </div>
         </div>
       </div>
 
-            <div class="perguntas">
+        <div class="perguntas">
         <div class="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" /> 
           <div class="collapse-title text-xl font-medium">
@@ -173,9 +167,9 @@
             <div class="mockup-code">
               <pre data-prefix="$"><code>john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt hash.txt</code></pre>
             </div><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: alqfna22</p>
-          </div>
+            </div>
+            </div>
         </div>
       </div>
 
@@ -187,7 +181,6 @@
           </div>
             <div class="collapse-content"> 
             <p>Certifique-se de que você ainda está na sessão meterpreter. Verifique seu diretório de trabalho atual digitando pwd , seguido de mover para cima (..) duas vezes. Liste os arquivos no diretório atual ( ls ou dir ) e finalmente leia o sinalizador executando cat flag1.txt .</p><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: flag{access_the_machine}</p>
           </div>
         </div>
@@ -205,7 +198,6 @@
               <pre data-prefix="$"><code>cd C:/Windows/System32/config</code></pre><br>
             <p>Liste os arquivos que estão lá, leia o flag2.txt:</p>
             </div><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: flag{sam_database_elevated_access}</p>
           </div>
         </div>
@@ -219,7 +211,6 @@
           </div>
              <div class="collapse-content"> 
             <p>Se listarmos todos os arquivos no diretório Jon, não vemos nenhuma flag. Vamos para a pasta Documents. </p><br>
-          <div class="collapse-content"> 
             <p class="resposta-easy">R: flag{admin_documents_can_be_valuable}</p>
           </div>
         </div>
