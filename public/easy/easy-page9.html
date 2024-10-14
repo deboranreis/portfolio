@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/gato.png">
-    <title>Pyramid Of Pain</title>
+    <title>Nmap</title>
     <link rel="stylesheet" href="../assets/css/dist/build.css">
     <link rel="stylesheet" href="../assets/css/dist/style.css">
 </head>
@@ -16,16 +16,16 @@
           <div class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
               <div class="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="/public/assets/profile.png" />
+                <img alt="Tailwind CSS Navbar component" src="../assets/profile.png" />
               </div>
             </div>
             <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
               <li>
                 <a class="justify-between">
-                  <a href="/index.html">Home</a>
-                  <a href="/public/profile.html"> Perfil</a> 
-                  <a href="/public/maquinas.html">Máquinas THM</a>
-                  <a href="/public/dashboard.html">Dashboards</a>
+                  <a href="../../index.html">Home</a>
+                  <a href="../profile.html"> Perfil</a> 
+                  <a href="../maquinas.html">Máquinas THM</a>
+                  <a href="../dashboard.html">Dashboards</a>
                 </a>
               </li>
             </ul>
@@ -40,9 +40,8 @@
     <div class="content">
       <div class="hero-content flex-col lg:flex-row">
         <div>
-          <h1 class="text-4xl font-bold">Pyramid Of Pain</h1>
-          <p class="py-6"><a href="0">Ver sala THM
-          </p>
+          <h1 class="text-4xl font-bold">Nmap</h1>
+          <p class="py-6"><a href="https://tryhackme.com/r/room/rpnmap">Ver sala THM</a></p>
         </div>
       </div>
     
@@ -51,18 +50,312 @@
         <div class="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" /> 
           <div class="collapse-title text-xl font-medium">
-            Click to open this one and close others
+            Quais construções de rede são usadas para direcionar o tráfego para o aplicativo correto em um servidor?
           </div>
           <div class="collapse-content"> 
-            <p>hello</p><br>
-            <p class="resposta-easy">R: </p>
+            <p>Quando um computador executa um serviço de rede, ele abre uma construção de rede chamada "porta" para receber a conexão.  As portas são necessárias para fazer várias solicitações de rede ou ter vários serviços disponíveis. </p><br>
+            <p class="resposta-easy">R: ports</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Quantos deles estão disponíveis em qualquer computador habilitado para rede?
+          </div>
+          <div class="collapse-content"> 
+            <p>Cada computador tem um total de 65535 portas disponíveis; no entanto, muitas delas são registradas como portas padrão. Por exemplo, um Webservice HTTP pode quase sempre ser encontrado na porta 80 do servidor. </p><br>
+            <p class="resposta-easy">R: 65535</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            [Pesquisa] Quantos destes são considerados "bem conhecidos"? (Estes são os números "padrão" mencionados na tarefa)
+          </div>
+          <div class="collapse-content"> 
+            <p>As portas "bem conhecidas" são aquelas numeradas de 0 a 1.023. Elas são atribuídas a protocolos e serviços específicos, como HTTP (porta 80) e HTTPS (porta 443), e são amplamente reconhecidas e utilizadas na comunicação de rede.</p><br>
+            <p class="resposta-easy">R: 1024</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Primeiro, como você acessa o menu de ajuda?
+          </div>
+          <div class="collapse-content"> 
+            <p>O parâmetro -h mostra a página de resumo da ajuda.</p><br>
+            <p class="resposta-easy">R: -h</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+           Frequentemente chamado de varredura furtiva, qual é o primeiro parâmetro listado para uma "varredura Syn"?
+          </div>
+          <div class="collapse-content"> 
+            <p>O parâmetro frequentemente utilizado para uma "varredura SYN", também conhecida como varredura furtiva, no Nmap é -sS.</p><br>
+            <p class="resposta-easy">R: -sS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+           Não é tão útil, mas que tal uma "varredura UDP"?
+          </div>
+          <div class="collapse-content"> 
+            <p>O parâmetro utilizado para realizar uma "varredura UDP" no Nmap é -sU. </p><br>
+            <p class="resposta-easy">R: -sU</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            E quanto à detecção do sistema operacional?
+          </div>
+          <div class="collapse-content"> 
+            <p>Ao usar -O, o Nmap tenta identificar o sistema operacional em execução no host alvo analisando características dos pacotes de resposta, como as opções TCP e os campos de TTL (Time to Live). </p><br>
+            <p class="resposta-easy">R: -O</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            E quanto à detecção da versão do serviço? 
+          </div>
+          <div class="collapse-content"> 
+            <p> Com o parâmetro -sV, o Nmap identifica não apenas quais portas estão abertas, mas também tenta determinar a versão dos serviços em execução nessas portas. </p><br>
+            <p class="resposta-easy">R: -sV</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            A maioria das pessoas gosta de ver alguma saída para saber se a varredura está realmente fazendo alguma coisa. Qual é o sinalizador de verbosidade?
+          </div>
+          <div class="collapse-content"> 
+            <p>Ao adicionar -v ao comando, o Nmap fornece saídas mais detalhadas durante a varredura, mostrando informações sobre o progresso e as portas que estão sendo verificadas. </p><br>
+            <p class="resposta-easy">R: -v</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Que tal "muito prolixo"? (Um favorito pessoal)
+          </div>
+          <div class="collapse-content"> 
+            <p>Quando você usa -vv, o Nmap fornece uma saída extremamente detalhada e abrangente</p><br>
+            <p class="resposta-easy">R: -vv</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Às vezes, salvar a saída em um formato de documento comum pode ser muito útil para relatórios. Como salvamos a saída no formato XML?
+          </div>
+          <div class="collapse-content"> 
+            <p>Para salvar a saída do Nmap no formato XML, você pode usar o sinalizador -oX seguido do nome do arquivo desejado. </p><br>
+            <p class="resposta-easy">R: -oX</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Varreduras agressivas podem ser boas quando outras varreduras não estão obtendo o resultado desejado e você realmente não se importa com o quão "barulhento" está. Qual é o botão para habilitar isso? 
+          </div>
+          <div class="collapse-content"> 
+            <p>Para realizar uma varredura agressiva no Nmap, você pode usar o sinalizador -A.</p><br>
+            <p class="resposta-easy">R: -A</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Como faço para definir o tempo no nível máximo, às vezes chamado de "Insano"?
+          </div>
+          <div class="collapse-content"> 
+            <p>Para definir o tempo no nível máximo, conhecido como "Insano" no Nmap, você pode usar o sinalizador -T5</p><br>
+            <p class="resposta-easy">R: -T5</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            E se eu quiser escanear uma porta específica?
+          </div>
+          <div class="collapse-content"> 
+            <p>Para escanear uma porta específica no Nmap, você pode usar o parâmetro -p seguido do número da porta que deseja verificar.</p><br>
+            <p class="resposta-easy">R: -p</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Que tal se eu quiser escanear todas as portas?
+          </div>
+          <div class="collapse-content"> 
+            <p>Este comando indica ao Nmap que ele deve verificar todas as portas, de 1 a 65.535.</p><br>
+            <p class="resposta-easy">R: -p-</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            E se eu quiser habilitar usando um script do mecanismo de script nmap? Para isso, basta incluir a primeira parte do switch sem a especificação de qual script executar.
+          </div>
+          <div class="collapse-content"> 
+            <p>Para habilitar o uso do mecanismo de script do Nmap sem especificar um script específico, você pode usar o parâmetro --script</p><br>
+            <p class="resposta-easy">R: --script</p>
+          </div>
+        </div>
+      </div>
+
+          <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            E se eu quiser executar todos os scripts da categoria de vulnerabilidade? 
+          </div>
+          <div class="collapse-content"> 
+            <p>Para executar todos os scripts da categoria de vulnerabilidade no Nmap, você pode usar o parâmetro --script seguido de vuln. </p><br>
+            <p class="resposta-easy">R: --script vuln</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual opção devo incluir se não quiser fazer ping no host?
+          </div>
+          <div class="collapse-content"> 
+            <p> Isso informa ao Nmap para ignorar a etapa de detecção de host ativo (ping) e prosseguir diretamente para a varredura das portas, assumindo que o host está ativo.</p><br>
+            <p class="resposta-easy">R: -Pn</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+           Vamos em frente e começar com o básico e executar uma varredura de sincronização na caixa fornecida. O que será esse comando sem o endereço IP do host?
+          </div>
+          <div class="collapse-content"> 
+            <p>Esse comando inicia uma varredura SYN, mas você precisaria adicionar o endereço IP do host ou o nome do domínio para especificar onde deseja realizar a varredura.</p><br>
+            <p class="resposta-easy">R: nmap -sS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Depois de escanear isso, quantas portas encontramos abertas abaixo de 1000?
+          </div>
+          <div class="collapse-content"> 
+            <p>Escaneie o ip da máquina do try hack me utilizando o parâmetro nmap -sS [ip_da_maquina]</p><br>
+            <p class="resposta-easy">R: 2</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Qual protocolo de comunicação é fornecido para essas portas após o número da porta?
+          </div>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: tcp</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Execute uma verificação de detecção de versão de serviço. Qual é a versão do software em execução na porta 22?
+          </div>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: 6.6.1p1</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Execute uma varredura agressiva. Qual sinalizador não está definido nos resultados para a porta 80?
+          </div>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: httponly</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perguntas">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-xl font-medium">
+            Execute uma varredura de script de vulnerabilidades associadas a esta caixa, a qual ataque de negação de serviço (DOS) esta caixa é suscetível? Responda com o nome da vulnerabilidade que é dado como título da seção na saída da varredura. Uma varredura de vulnerabilidade pode levar um tempo para ser concluída. Caso você fique preso, a resposta para esta pergunta foi fornecida na dica, no entanto, é bom ainda executar esta varredura e se acostumar a usá-la, pois pode ser inestimável. 
+          </div>
+          <div class="collapse-content"> 
+            <p class="resposta-easy">R: http-slowloris-check</p>
           </div>
         </div>
       </div>
   
       <section class="link_buttons">
-        <button class="btn btn-outline"><a href="easy-page1.html">Anterior</button>
-        <button class="btn btn-outline"><a href="easy-page2.html">Próxima</button>
+        <button class="btn btn-outline"><a href="easy-page8.html">Anterior</button>
       </section>
       
     </div>
