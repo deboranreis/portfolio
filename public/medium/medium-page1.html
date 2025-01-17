@@ -77,14 +77,13 @@
             <p>Com isso, podemos tentar realizar um ataque de força bruta no nome dos usuários do Wordpress (se um nome de usuário válido for inserido no Wordpress</p>
             <p>ele informa na mensagem de erro se temos esse usuário ou não).</p>
             <p>Então primeiro iremos utilizar o Burp Suite para coletar as informações necessárias para realizar o brute force pelo hydra.</p>
-            <p>Após realizar a interceptação no Burp, identificamos que:</p><br><br>
+            <p>Após realizar a interceptação no Burp, identificamos que:</p><br>
                 <p><b>log</b> – Campo que coleta o usuário de login</p>
                 <p><b>pwd</b> – Campo que coleta a senha</p>
                 <p><b>Invalid username</b> – Erro que retorna ao tentar fazer login com um usuário invalido</p><br>
             <p>Em seguida iremos realizar força bruta no campo do usuário utilizando a lista encontrada anteriormente, iremos fazer o ataque de um campo por vez, para</p>
             <p>que o tempos de conclusão não seja longo.</p>
-            <p>No comando abaixo iremos informar que o campo de login será a wordlist "fsocity.dic", o password será "teste", e que quero que o hydra me retorne qualquer resposta que</p>
-            <p>seja diferente de “Invalid username“, assim quando ele encontrar um usuário válido a mensagem de erro irá mudar.</p><br>
+            <p>No comando abaixo iremos informar que o campo de login será a wordlist "fsocity.dic", o password será "teste", e que quero que o hydra me retorne qualquer resposta que seja diferente de “Invalid username“, assim quando ele encontrar um usuário válido a mensagem de erro irá mudar.</p><br>
             <div class="mockup-code">
               <pre data-prefix="$"><code>hydra -V -L fsocity.dic -p teste 10.10.36.60 http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log:Invalid username."</code></pre>
             </div><br>
@@ -93,8 +92,7 @@
             <p>Agora que sabemos que o login será Elliot e que a senha será a wordlist fsocity.dic. Também iremos alterar a mensagem de erro, então qualquer</p>
             <p>coisa que seja diferente de “The password you entered for the username” confirmará a senha válida.</p><br>
             <div class="mockup-code">
-              <pre data-prefix="$"><code><p>hydra -V -l Elliot -P  fsocity.dic 10.10.36.60 http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log:</p>
-                <p>The password you entered for the username"</p></code></pre>
+              <pre data-prefix="$"><code><p>hydra -V -l Elliot -P  fsocity.dic 10.10.36.60 http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log:"The password you entered for the username"</p></code></pre>
             </div><br>
             <p><b>Senha:</b> ER28-0652</p><br>
             <p>E assim conseguimos acessar o Wordpress :P</p>
