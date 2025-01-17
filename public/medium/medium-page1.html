@@ -78,9 +78,9 @@
             <p>ele informa na mensagem de erro se temos esse usuário ou não).</p>
             <p>Então primeiro iremos utilizar o Burp Suite para coletar as informações necessárias para realizar o brute force pelo hydra.</p>
             <p>Após realizar a interceptação no Burp, identificamos que:</p><br><br>
-                <p><b>log</b> – Campo que coleta o usuário de login</p><br>
-                <p><b>pwd</b> – Campo que coleta a senha</p><br>
-                <p><b>Invalid username</b> – Erro que retorna ao tentar fazer login com um usuário invalido</p><br><br>
+                <p><b>log</b> – Campo que coleta o usuário de login</p>
+                <p><b>pwd</b> – Campo que coleta a senha</p>
+                <p><b>Invalid username</b> – Erro que retorna ao tentar fazer login com um usuário invalido</p><br>
             <p>Em seguida iremos realizar força bruta no campo do usuário utilizando a lista encontrada anteriormente, iremos fazer o ataque de um campo por vez, para</p>
             <p>que o tempos de conclusão não seja longo.</p>
             <p>No comando abaixo iremos informar que o campo de login será a wordlist "fsocity.dic", o password será "teste", e que quero que o hydra me retorne qualquer resposta que</p>
